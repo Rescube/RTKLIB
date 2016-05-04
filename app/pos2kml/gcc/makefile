@@ -2,7 +2,8 @@
 
 BINDIR = /usr/local/bin
 SRC    = ../../../src
-CFLAGS = -Wall -O3 -ansi -pedantic -I$(SRC) -DTRACE
+CTARGET =
+CFLAGS = -Wall -O3 -ansi -pedantic -I$(SRC) $(CTARGET) -DTRACE
 LDLIBS  = -lm -lrt
 
 pos2kml    : pos2kml.o convkml.o solution.o geoid.o rtkcmn.o preceph.o
