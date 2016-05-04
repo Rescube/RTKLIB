@@ -2,12 +2,12 @@
 
 BINDIR = /usr/local/bin
 SRC    = ../../../src
-
+EXTRA =
 # for beagleboard
 #CTARGET= -mfpu=neon -mfloat-abi=softfp -ffast-math
 CTARGET= -DENAGLO -DENAQZS -DENACMP -DNFREQ=3
 
-CFLAGS = -Wall -O3 -ansi -pedantic -Wno-unused-but-set-variable -I$(SRC) -I.. -DTRACE $(CTARGET) -g
+CFLAGS = -Wall -O3 -ansi -pedantic -Wno-unused-but-set-variable -I$(SRC) -I.. -DTRACE $(CTARGET) $(EXTRA) -g
 LDLIBS  = -lm -lrt -lpthread
 
 all        : rtkrcv
